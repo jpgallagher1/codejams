@@ -52,14 +52,11 @@ fname = "A-small-practice.in.txt"
 
 def importData(filePath):
     textArray = np.loadtxt(fname, dtype="string")
-    result = []
-    addToResult = result.append
     for item in textArray[1:]:
         if item.isalpha() is not True:
-            addToResult(textArray[list(textArray).index(item) + 1:
-                                  list(textArray).index(item) + int(item) + 1])
+            yield (textArray[list(textArray).index(item) + 1:
+                             list(textArray).index(item) + int(item) + 1])
         else:
             pass
-    return result
 
-print importData(fname)
+print [x for x in importData(fname)]
