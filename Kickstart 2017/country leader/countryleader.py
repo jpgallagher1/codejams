@@ -64,10 +64,12 @@ def tie(charsList):
 
     return np.sort(charsList, kind='mergesort')
 
-#alphabetize first, then check for sets
+# alphabetize first, then check for sets
+
+
 def standings(charsList):
-	li = map(len, map(list, (map(set, charsList))))
-	li.sort()
-	return li
+    li = map(len, map(list, (map(set, charsList))))
+    li.sort()
+    return li
 
 print [standings(x) for x in importData(fname)]
