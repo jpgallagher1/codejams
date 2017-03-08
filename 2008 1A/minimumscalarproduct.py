@@ -4,9 +4,6 @@ def importData(filePath):
 	for line in open(filePath):
 		yield map(int, (line.strip()).split())
 
-def multiply(a, b):
-	return a*b
-
 def calculate(listOfVectors):
 	caseCount = listOfVectors[0]
 	vectorCount = 0
