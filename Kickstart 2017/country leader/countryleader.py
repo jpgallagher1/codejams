@@ -46,30 +46,42 @@ Each name consists of at most 20 characters and only consists of the
 uppercase English letters A through Z and ' '(space).
 All names start and end with alphabet letters.
 '''
-import numpy as np
+
 fname = "A-small-practice.in.txt"
 
 
 def importData(filePath):
-    textArray = np.loadtxt(fname, dtype="string")
-    for item in textArray[1:]:
-        if item.isalpha() is not True:
-            yield (textArray[list(textArray).index(item) + 1:
-                             list(textArray).index(item) + int(item) + 1])
+    textArray = open(filePath)
+    listOfArgs = []
+    appendToListOfArgs = listOfArgs.append
+    for line in textArray:
+        line = line.strip('\n')
+        appendToListOfArgs(line)
+    for line in listOfArgs[1:]:
+        if line[:1].isalpha() is not True:
+            yield (listOfArgs[list(listOfArgs).index(line) + 1:
+                list(listOfArgs).index(line) + int(line) + 1])
         else:
             pass
+#
+#
+#def tie(charsList):
+#
+#    return np.sort(charsList, kind='mergesort')
+#
+## alphabetize first, then check for sets
+#
+#
+#def standings(charsList):
+#    li = map(len, map(list, (map(set, charsList))))
+#    li.sort()
+#    return li
 
 
-def tie(charsList):
 
-    return np.sort(charsList, kind='mergesort')
-
-# alphabetize first, then check for sets
+print [x for x in importData(fname)][0]
 
 
-def standings(charsList):
-    li = map(len, map(list, (map(set, charsList))))
-    li.sort()
-    return li
 
-print [standings(x) for x in importData(fname)]
+
+
