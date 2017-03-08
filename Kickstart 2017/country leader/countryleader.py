@@ -65,21 +65,30 @@ def importData(filePath):
             pass
 #
 #
-#def tie(charsList):
-#
-#    return np.sort(charsList, kind='mergesort')
+def tie(charsList):
+    l = charsList
+    l.sort()
+    return l
 #
 ## alphabetize first, then check for sets
 #
 #
-#def standings(charsList):
-#    li = map(len, map(list, (map(set, charsList))))
-#    li.sort()
-#    return li
+def standings(charsList):
+    li = map(len, map(list, (map(set, charsList))))
+    return li
 
 
 
-print [x for x in importData(fname)][0]
+l = [x for x in importData(fname)]
+z1 = map(tie, l)[0]
+z2 = map(standings, l)[0]
+zipped = zip(z1, z2)
+zipDic = dict(zipped)
+items  = [(v, k) for k, v in zipDic.items()]
+items.sort()
+items.reverse()
+items = [(k,v) for v,k in items]
+print items 
 
 
 
