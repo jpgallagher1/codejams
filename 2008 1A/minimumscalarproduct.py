@@ -1,9 +1,11 @@
-if name == "__main__" :
-	case = raw_input()
+if __name__ == "__main__" :
+	case = int(raw_input())
 	
 	for caseCount in xrange(1, case+1):
 		testCase = raw_input()
-		print ("Case #%i: %s" % (caseNr, testCase))
+		print ("Case #%i: %s" % (caseCount, testCase))
+
+
 #def calculate(listOfVectors):
 #	caseCount = listOfVectors[0]
 #	vectorCount = 0
