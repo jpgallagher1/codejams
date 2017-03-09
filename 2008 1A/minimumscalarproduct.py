@@ -1,10 +1,3 @@
-
-#def storeVectors(vectorCount, caseNumber):
-#	count = vectorCount
-#	for caseCount in xrange(2, caseNumber+2):
-#		n =
-
-
 def sort(list):
 	l = list
 	l.sort()
@@ -30,4 +23,4 @@ if __name__ == "__main__" :
 			n = [int(s) for s in raw_input().split(" ")]
 			addToVec(n)
 			i += 1
-		print ("Case #%i: %s" % (caseCount, vecSet))
+		print ("Case #%i: %s" % (caseCount, minimumProduct(vecSet[1],vecSet[2])))
