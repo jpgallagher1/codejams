@@ -1,10 +1,3 @@
-if __name__ == "__main__" :
-	case = int(raw_input())
-	
-	for caseCount in xrange(1, case+1):
-		testCase = raw_input()
-		print ("Case #%i: %s" % (caseCount, testCase))
-
 
 #def calculate(listOfVectors):
 #	caseCount = listOfVectors[0]
@@ -26,8 +19,25 @@ if __name__ == "__main__" :
 #		i += 3
 #	return vectors
 
+def sort(list):
+	l = list
+	l.sort()
+	return l
 
+def reverseSort(list):
+	l = list
+	l.sort(reverse = True)
+	return l
 
+def minimumProduct(v1, v2):
+	v1 = sort(v1)
+	v2 = reverseSort(v2)
+	return [v1 * v2 for v1,v2 in zip(v1, v2)]
 
-
-#calculate([x for x in importData(fname)])
+if __name__ == "__main__" :
+	case = int(raw_input())
+	
+	for caseCount in xrange(1, case+1):
+		n = [int(s) for s in raw_input().split(" ")]
+		
+		print ("Case #%i: %s" % (caseCount, sort(n)))
