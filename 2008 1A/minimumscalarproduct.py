@@ -11,7 +11,7 @@ def reverseSort(list):
 def minimumProduct(v1, v2):
 	v1 = sort(v1)
 	v2 = reverseSort(v2)
-	return [v1 * v2 for v1,v2 in zip(v1, v2)]
+	return " ".join(map(str,[v1 * v2 for v1,v2 in zip(v1, v2)]))
 
 if __name__ == "__main__" :
 	case = int(raw_input())
